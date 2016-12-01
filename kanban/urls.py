@@ -11,6 +11,7 @@ router.register(r'api', views.TaskViewSet)
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
+    url(r'^kanban_app/', include('kanban_app.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
