@@ -1,4 +1,9 @@
 # kanban-django
 
 
+<<<<<<< HEAD
 hi mom
+=======
+CHANGE TO README
+LARGER DIFFERENT CHANGE TO README
+>>>>>>> 18027d4bb6e3d04730ae9868661e27c23b436497
