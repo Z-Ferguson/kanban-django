@@ -6,4 +6,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', views.index, name='home'),
     url('^', include('django.contrib.auth.urls')),
+    url(r'^kanban/main/$', views.view_main, name='main'),
 ]
