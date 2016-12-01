@@ -4,6 +4,6 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='home'),
     url('^', include('django.contrib.auth.urls')),
 ]
