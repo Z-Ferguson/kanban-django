@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 {% load static %}
 <html>
     <head>
+        <link rel="stylesheet" href="{% static 'kanban_app/css/main.css' %}">
         <meta charset="utf-8">
 
         <title>TRELLO CLONE</title>
     </head>
     <body>
     <div id="location">THIS IS WHERE YOUR STUFF GOES</div>
+    <div id="tasktitle"></div>
+    <div id="tasks"></div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="{% static 'kanban_app/js/main.js' %}"></script>

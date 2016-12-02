@@ -1,14 +1,14 @@
-console.log('you loaded js right')
-// function taskList(){
-//     console.log('you loaded js right')
-//     // var $orderedlist = $("<ol>")
-//     //     $.ajax("http://127.0.0.1:8000/api").done(function(results){
-//     //         var tasks = results.results
-//     //         for(var i = 0; i < tasks.length; i++){
-//     //             $stuff.html($stuff.html()+ tasks[i]['title'] + "<br>")
-//     //             $("#location").append($orderedlist),
-//     // $("#location").append("NONONONONONONONO")
-// //             }
-// //         })
-// }
-// taskList()
+
+function taskList(){
+    var $orderedlist = $("<ol>")
+        $.ajax("http://127.0.0.1:8000/api").done(function(results){
+            var tasks = results.results
+            for(var i = 0; i < tasks.length; i++){
+                $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + ": "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['status'] + "  "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
+                $("#tasks").append($orderedlist);
+            }
+        })
+}
+taskList()
