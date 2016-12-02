@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 
 class TaskSerializer(serializers.Serializer):
-    
     priority = serializers.ChoiceField(choices=Tasks.priority_choices)
     status = serializers.ChoiceField(choices=Tasks.status_choices)
 
