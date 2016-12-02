@@ -63,6 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
          os.path.join(BASE_DIR, 'cloneapp/templates'),
+         os.path.join(BASE_DIR, 'cloneapp/templates/registration'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
