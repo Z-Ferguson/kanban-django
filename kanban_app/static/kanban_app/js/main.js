@@ -1,3 +1,5 @@
+
+
 function taskPost(){
   var postdata = {'title': 'TEST', 'status': 'HIGH', 'priority': 'LOW'}
   jQuery.ajax({url:'http://127.0.0.1:8000/api/', data:postdata, type:'POST'
@@ -18,4 +20,3 @@ function taskList(){
         })
 }
 taskList()
-taskPost()
