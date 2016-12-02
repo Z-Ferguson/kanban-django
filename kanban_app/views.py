@@ -20,8 +20,8 @@ def view_main(request):
 
 
 def create_user(request):
-    if request.method == "GET":
-        form = UserForm(request.GET)
+    if request.method == "POST":
+        form = UserForm(request.POST)
         if form.is_valid():
             user = User.objects.create_user(**form.cleaned_data)
             user.save()
