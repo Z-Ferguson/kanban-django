@@ -6,19 +6,28 @@ body {
     background-color: lightblue;
 }
 
-#task1 {
-    margin: 3%;
-    }
+#navbardropdown {
+    background-color: #e7e7e7;
+}
 
 html {
     background-color: lightblue;
 }
 
+.dropdown-button {
+    padding: 1px 1px;
+}
+.dropdown-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.dropdown-menu {
+    background-color: #337ab7; color: black;
+}
 .dropdown-toggle {
-    border =
-    background-color: #e7e7e7; color: black;
+    background-color: #337ab7; color: black;
 }
 
 .navbar {
-    background-color: #337ab7;
+    background-color: #e7e7e7;
 }
