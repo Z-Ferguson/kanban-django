@@ -13,3 +13,8 @@ body {
 html {
     background-color: lightblue;
 }
+
+.dropdown-toggle {
+    border =
+    background-color: #e7e7e7; color: black;
+}
