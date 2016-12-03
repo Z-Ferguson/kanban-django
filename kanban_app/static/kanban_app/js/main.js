@@ -89,8 +89,17 @@ function taskList(){
             }
         })
 }
+<<<<<<< HEAD
 
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
+=======
+taskList()
+taskPost()
+$('#addButton').click()
+$('#editButton').click(putTask)
+$('#deleteButton').click(removeTask)
+$('#reviewButton').click(pickTask)
+>>>>>>> 5ab7edb2defd6ee8f0c1909b29085f501c7cc024
