@@ -65,28 +65,22 @@ function taskPost(){
 }
 
 
-// Delete
+// DELETE //
 function taskDelete(){
     console.log('helloooo')
-  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/3', type:'DELETE'
+  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', type:'DELETE'
     }).done(function(){})
 }
 
-function taskPut(){
-    specific = 'http://127.0.0.1:8000/api/task/3'
-    jQuery.ajax({url:specific, type:'PUT'
-})}.done(function(data){
-    postdata = {'title': 'the doctor', 'status': 'is', 'priority': 'death', 'description': 'today'}
-    var taskinfo = data
-    for(var i = 0; i < taskinfo.length; i++){
-        $orderedlist.html($orderedlist.html()+ taskinfo[i]['id'] + ": "),
-        $orderedlist.html($orderedlist.html()+ taskinfo[i]['title'] + ": "),
-        $orderedlist.html($orderedlist.html()+ taskinfo[i]['status'] + "  "),
-        $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + ": "),
-        $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
-        $("#task1").append($orderedlist);
+
+// PATCH //
+function taskPatch(url){
+    console.log("PAAAATCHING")
+    var patchdata = {'title': 'patchingTitle', 'description': 'holy shit a new description!'}
+    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/4/', data:patchdata, type: 'PATCH'
+}).done(function(results){})
 }
-})
+
 
 
 //GET//
@@ -107,9 +101,27 @@ function taskList(){
 }
 
 
+
+
+function addTask(){
+    var title = document.getElementById("new_task").value
+    var priority = document.getElementById("priority").value
+    console.log("here")
+    console.log(title)
+    var postdata = {'title': title, 'status': 'N', 'priority': priority}
+    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, type:'POST'
+    }).done(function(){
+
+    })
+}
+
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
 $("#try_delete").click(taskDelete)
-$("#editButton").click(taskPut)
+
+
+$("#submit_new_task").click(addTask)
+
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
+$("#try_patch").click(taskPatch)
