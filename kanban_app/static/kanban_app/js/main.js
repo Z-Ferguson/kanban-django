@@ -72,6 +72,22 @@ function taskDelete(){
     }).done(function(){})
 }
 
+function taskPut(){
+    specific = 'http://127.0.0.1:8000/api/task/3'
+    jQuery.ajax({url:specific, type:'PUT'
+})}.done(function(data){
+    postdata = {'title': 'the doctor', 'status': 'is', 'priority': 'death', 'description': 'today'}
+    var taskinfo = data
+    for(var i = 0; i < taskinfo.length; i++){
+        $orderedlist.html($orderedlist.html()+ taskinfo[i]['id'] + ": "),
+        $orderedlist.html($orderedlist.html()+ taskinfo[i]['title'] + ": "),
+        $orderedlist.html($orderedlist.html()+ taskinfo[i]['status'] + "  "),
+        $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + ": "),
+        $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
+        $("#task1").append($orderedlist);
+}
+})
+
 
 //GET//
 function taskList(){
@@ -94,6 +110,6 @@ function taskList(){
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
 $("#try_delete").click(taskDelete)
-
+$("#editButton").click(taskPut)
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
