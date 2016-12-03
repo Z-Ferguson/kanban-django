@@ -2,17 +2,55 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html>
 {% block content %}
+<html>
     <head>
         <link rel="stylesheet" href="{% static 'kanban_app/css/main.css' %}">
         <meta charset="utf-8">
         <title>TRELLO CLONE</title>
     </head>
     <body>
-    <div id="location">THIS IS WHERE YOUR STUFF GOES</div>
-    <div id="tasktitle"></div>
-    <div id="tasks"></div>
+    <h4>THIS IS WHERE YOUR STUFF GOES</h4>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Task 1</h6>
+              </div>
+              <div id='task1' class="panel-body">
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Task 1</h6>
+              </div>
+              <div id='task2' class="panel-body">
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Task 1</h6>
+              </div>
+              <div id='task3' class="panel-body">
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Task 1</h6>
+              </div>
+              <div id='task4' class="panel-body">
+              </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="{% static 'kanban_app/js/main.js' %}"></script>

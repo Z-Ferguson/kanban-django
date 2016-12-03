@@ -43,3 +43,7 @@ function taskList(){
 }
 taskList()
 taskPost()
+$('#addButton').click()
+$('#editButton').click(putTask)
+$('#deleteButton').click(removeTask)
+$('#reviewButton').click(pickTask)
