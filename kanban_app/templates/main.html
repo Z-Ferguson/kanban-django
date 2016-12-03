@@ -11,13 +11,43 @@
     </head>
     <body>
     <h4>THIS IS WHERE YOUR STUFF GOES</h4>
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="form-group">
+    <label class="control-label" for="focusedInput">Task Title</label>
+    <input class="form-control" id="focusedInput" type="text" value="Task Title">
+  </div>
+  <div class="form-group">
+<label class="control-label" for="focusedInput">Task Priority</label>
+<input class="form-control" id="focusedInput" type="text" value="Task Priority">
+</div>
+
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
     <div class="row">
         <div class="col-sm-3">
-            <div class="panel panel-primary">
+            <div id = "container" class="panel panel-primary">
               <div class="panel-heading">
                 <h6 class="panel-title">Task 1</h6>
+                <ul class="fortask">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Review Tasks</button>
+                            <li><button class = 'dropdown-button' id="try_patch">Edit Task</button></li>
+                            <li><button class = 'dropdown-button' id="try_delete">Delete Tasks</button></li>
+
+                        </ul>
+       </li>
+   </ul>
               </div>
-              <div id='task1' class="panel-body">
+              <div id='task1' class="container">
+
               </div>
             </div>
         </div>
@@ -44,11 +74,24 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="panel panel-primary">
+            <div id = "container" class="panel panel-primary">
               <div class="panel-heading">
                 <h6 class="panel-title">Task 3</h6>
+                <ul class="fortask">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><button id="try_post">Create New Task</button></li>
+                            <li><button id="getButton">Review Tasks</button></li>
+                            <li><button id="try_patch">Edit Task</button></li>
+                            <li><button id="try_delete">Delete Tasks</button></li>
+
+                        </ul>
+       </li>
+   </ul>
               </div>
               <div id='task3' class="panel-body">
+
               </div>
             </div>
         </div>
@@ -56,8 +99,21 @@
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h6 class="panel-title">Task 4</h6>
+                <ul class="fortask">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><button id="try_post">Create New Task</button></li>
+                            <li><button id="getButton">Review Tasks</button></li>
+                            <li><button id="try_patch">Edit Task</button></li>
+                            <li><button id="try_delete">Delete Tasks</button></li>
+
+                        </ul>
+       </li>
+   </ul>
               </div>
               <div id='task4' class="panel-body">
+
               </div>
             </div>
         </div>
