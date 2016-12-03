@@ -60,7 +60,7 @@ function taskPost(){
     console.log('you added something new')
   var postdata = {'title': 'its over', 'status': 'c', 'priority': 'l', 'description': 'these are words'}
   jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, datatype: 'jsonp', type:'POST'
-    }).done(function(){
+    }).done(function(results){
     })
 }
 
@@ -89,17 +89,9 @@ function taskList(){
             }
         })
 }
-<<<<<<< HEAD
+
 
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
-=======
-taskList()
-taskPost()
-$('#addButton').click()
-$('#editButton').click(putTask)
-$('#deleteButton').click(removeTask)
-$('#reviewButton').click(pickTask)
->>>>>>> 5ab7edb2defd6ee8f0c1909b29085f501c7cc024
