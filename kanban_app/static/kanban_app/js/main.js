@@ -66,13 +66,11 @@ function taskPost(){
 
 
 // Delete
-// function removeTask(selection){
-//     specific_task = "http://127.0.0.1:8000/api/task/" + "1 "
-//     $.ajax({url: specific_task, type: 'DELETE'}).done(function(results){
-//         $('#removetasks').html(results['title'])
-//         // var tasks = results.results
-//     })
-// }
+function taskDelete(){
+    console.log('helloooo')
+  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/3', type:'DELETE'
+    }).done(function(){})
+}
 
 
 //GET//
@@ -82,8 +80,10 @@ function taskList(){
         $.ajax("http://127.0.0.1:8000/api/task/").done(function(results){
             var tasks = results.results
             for(var i = 0; i < tasks.length; i++){
+                $orderedlist.html($orderedlist.html()+ tasks[i]['id'] + ": "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + ": "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['status'] + "  "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + ": "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
                 $("#task1").append($orderedlist);
             }
@@ -93,5 +93,7 @@ function taskList(){
 
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
+$("#try_delete").click(taskDelete)
+
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
