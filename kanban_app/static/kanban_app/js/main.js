@@ -110,10 +110,7 @@ function addTask(){
     console.log(title)
     var postdata = {'title': title, 'status': 'N', 'priority': priority}
     jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, type:'POST'
-    }).done(function(){
-
-    })
-}
+}).done(function(results){}
 
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
