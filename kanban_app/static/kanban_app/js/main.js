@@ -85,7 +85,7 @@ function taskList(){
                 $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + ": "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['status'] + "  "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
-                $("#tasks").append($orderedlist);
+                $("#task1").append($orderedlist);
             }
         })
 }
