@@ -1,32 +1,32 @@
-
-
-function taskPost(){
-  var postdata = {'title': 'TEST', 'status': 'HIGH', 'priority': 'LOW', 'description': 'new description'}
-  jQuery.ajax({url:'http://127.0.0.1:8000/api/task', data:postdata, type:'POST'
-    }).done(function(){})
-}
-
-
-function pickTask(){
-    specific_task = "http://127.0.0.1:8000/api" + str(selection)
-    $.ajax({url: "http://127.0.0.1:8000/api", type: 'GET'}).done(function(results){
-        var tasks = results.results
-}
-
-
-
-function removeTask(selection){
-    specific_task = "http://127.0.0.1:8000/api" + str(selection)
-    $.ajax({url: specific_task, type: 'DELETE'}).done(function(results){
-        var tasks = results.results
-}
-
-
-function putTask(selection){
-    specific_task = "http://127.0.0.1:8000/api" + str(selection)
-    $.ajax({url: specific_task, type: 'PUT'}).done(function(results){
-        var tasks = results.results
-}
+// 
+//
+// function taskPost(){
+//   var postdata = {'title': 'TEST', 'status': 'HIGH', 'priority': 'LOW', 'description': 'new description'}
+//   jQuery.ajax({url:'http://127.0.0.1:8000/api/task', data:postdata, type:'POST'
+//     }).done(function(){})
+// }
+//
+//
+// function pickTask(){
+//     specific_task = "http://127.0.0.1:8000/api" + str(selection)
+//     $.ajax({url: "http://127.0.0.1:8000/api", type: 'GET'}).done(function(results){
+//         var tasks = results.results
+// }
+//
+//
+//
+// function removeTask(selection){
+//     specific_task = "http://127.0.0.1:8000/api" + str(selection)
+//     $.ajax({url: specific_task, type: 'DELETE'}).done(function(results){
+//         var tasks = results.results
+// }
+//
+//
+// function putTask(selection){
+//     specific_task = "http://127.0.0.1:8000/api" + str(selection)
+//     $.ajax({url: specific_task, type: 'PUT'}).done(function(results){
+//         var tasks = results.results
+// }
 
 
 function taskList(){
@@ -42,4 +42,3 @@ function taskList(){
         })
 }
 taskList()
-taskPost()

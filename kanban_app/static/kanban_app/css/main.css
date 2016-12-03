@@ -1,3 +1,14 @@
+body {
+    background-color: lightblue;
+}
+
+#location {
+    background-color: lightblue;
+}
+
+#task1 {
+    margin: 3%;
+    }
 
 html {
     background-color: lightblue;
