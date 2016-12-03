@@ -13,7 +13,8 @@ class Task(models.Model):
     priority = models.CharField(max_length=20)
     description = models.TextField(max_length=1250, null=True)
     created = models.DateTimeField(auto_now_add=True)
-    owner = models.ForeignKey(User, related_name='task', null=True, blank=True)
+    # owner = models.ForeignKey(User, related_name='task', null=True, blank=True)
+    owner = models.OneToOneField(User, null=True)
 
     # class Meta:
     #     ordering = ('status', 'priority', 'created')

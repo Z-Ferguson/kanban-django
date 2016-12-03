@@ -3,7 +3,7 @@ from .models import Task
 # from django.contrib.auth.models import User
 
 
-class TaskSerializer(serializers.HyperlinkedModelSerializer):
+class TaskSerializer(serializers.ModelSerializer):
 
     # title = serializers.CharField(max_length=250)
     # priority = serializers.ChoiceField(choices=Tasks.priority_choices)
