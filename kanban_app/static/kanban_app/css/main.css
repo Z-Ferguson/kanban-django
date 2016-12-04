@@ -1,6 +1,15 @@
 body {
     background-color: lightblue;
+    font-family : "Trebuchet MS", Helvetica, sans-serif;
 }
+
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:4px !important;
+    padding-bottom:0 !important;
+    height: 28px;
+}
+.navbar {min-height:28px !important;}
 
 #location {
     background-color: lightblue;
@@ -14,6 +23,15 @@ html {
     background-color: lightblue;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    )
 .dropdown-button {
     padding: 1px 1px;
 }
@@ -22,7 +40,10 @@ html {
 }
 
 .dropdown-menu {
-    background-color: #337ab7; color: black;
+    border:0px;
+    outline:0px;
+    border: none;
+    background: transparent;
 }
 .dropdown-toggle {
     background-color: #337ab7; color: black;
