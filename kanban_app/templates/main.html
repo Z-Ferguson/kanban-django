@@ -15,18 +15,33 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
         <div class="form-group">
-    <label class="control-label" for="focusedInput">Task Title</label>
-    <input class="form-control" id="focusedInput" type="text" value="Task Title">
-  </div>
-  <div class="form-group">
-<label class="control-label" for="focusedInput">Task Priority</label>
-<input class="form-control" id="focusedInput" type="text" value="Task Priority">
+            <h6>Add Task</h6>
+        <form>
+               new task: <input type="text" id="addTask" name="title"><br>
+           </form>
+           <button id="add">add </button>
+           <form>
+                   <select id="priority">
+                   <option>Priority</option>
+                   <option value='H'>High</option>
+                   <option value='M'>Medium</option>
+                   <option value='L'>Low</option>
+                   </select>
+           </form>
+           <form>
+                   <select id="status">
+                   <option>Status</option>
+                   <option value='N'>new</option>
+                   <option value='P'>in progress</option>
+                   <option value='C'>done</option>
+                   </select>
+           </form>
+           <form>
+                description: <input type="text" id="addDesc" name="description"><br>
+            </form>
 </div>
-
-    </div>
-  </div>
-    </div>
-  </div>
+</div>
+</div>
 </div>
     <div class="row">
     <div class="col-sm-1">
@@ -37,7 +52,7 @@
                 <h6 class="panel-title">JOHN D. BOWER</h6>
                 <ul class="fortask">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">EDIT TASK<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
                             <li><button class = 'btn btn-primary' id="try_review">Review </button></li>
@@ -48,7 +63,12 @@
        </li>
    </ul>
               </div>
-              <div id='task1' class="panel-body">
+              <div id='task1' class="container">
+                <ol id="task1list">
+                <li>HERE IS WHERE TASKS GO</li>
+                <li>THIS IS ANOTHER TASK</li>
+                <li>THIS IS THE THIRD TASK</li>
+                </ol>
               </div>
             </div>
         </div>
@@ -77,9 +97,6 @@
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h6 class="panel-title">ZACH FERGUSON</h6>
-
-              </div>
-              <div id='task3' class="panel-body">
                 <ul class="fortask">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
@@ -88,23 +105,23 @@
                             <li><button class = 'btn btn-primary' id="try_review">Review </button></li>
                             <li><button class = 'btn btn-primary' id="try_patch">Edit Task</button></li>
                             <li><button class = 'btn btn-primary' id="try_delete">Delete Tasks</button></li>
+
                         </ul>
        </li>
    </ul>
               </div>
-              <div id='task3' class="container">
-
+              <div id='task1' class="container">
               </div>
             </div>
         </div>
     </div>
 
 
-    <form id="new_task_form" action="" method="post">
-        <legend>Create a new task</legend>
-        {{form.as_p}}
-        <input type="submit" value="Save">
-    </form>
+<form id="new_task_form" action="" method="post">
+    <legend>Create a new task</legend>
+    {{form.as_p}}
+    <input type="submit" value="Save">
+</form>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="{% static 'kanban_app/js/main.js' %}"></script>
