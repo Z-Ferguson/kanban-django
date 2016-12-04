@@ -30,30 +30,40 @@ $.ajaxSetup({
 });
 
 //POST
-function taskPost(){
-    var title = document.getElementById("addTask").value
-    var priority = document.getElementById("priority").value
-    var status = document.getElementById("status").value
-    var description = document.getElementById("addDesc").value
-    console.log('you added something new')
-  var postdata = {'title': title, 'status': status, 'priority': priority, 'description': description}
-  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, datatype: 'jsonp', type:'POST'
-    }).done(function(results){
-    })
-}
+// function taskPost(){
+//     var title = document.getElementById("addTask").value
+//     var priority = document.getElementById("priority").value
+//     var status = document.getElementById("status").value
+//     var description = document.getElementById("addDesc").value
+//     console.log('you added something new')
+//   var postdata = {'title': title, 'status': status, 'priority': priority, 'description': description}
+//   jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, datatype: 'jsonp', type:'POST'
+//     }).done(function(results){
+//     location.reload();
+//     })
+// }
 
 // DELETE //
-function taskDelete(){
-    console.log('EXTERMINATE')
-  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/7/', type:'DELETE'
-    }).done(function(){})
+function taskDelete(getID){
+   var j = document.getElementById("getID").value
+   console.log('EXTERMINATE')
+ jQuery.ajax({url:'http://127.0.0.1:8000/api/task/' + j + '/', type:'DELETE'
+   }).done(function(){})
 }
 
 // PATCH //
-function taskPatch(url){
-    console.log("PAAAATCHING")
-    var patchdata = {'title': 'patchingTitle', 'description': 'holy shit a new description!'}
-    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/7/', data:patchdata, type: 'PATCH'
+function taskPatch(getID){
+    var j = document.getElementById("getID").value
+    console.log(j)
+    // var title = document.getElementByID("title").value
+    var priority = document.getElementById("priority").value
+    console.log(priority)
+    var status = document.getElementById("status").value
+    console.log(status)
+    var description = document.getElementById("addDesc").value
+    console.log(description)
+    var patchData = {'title': title, 'priority': priority, 'status': status, 'description': description}
+    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/' +  j + '/', data:patchData, processData: false, contentType: false, dataType: 'jsonp', type:'PATCH'
 }).done(function(results){})
 }
 
@@ -64,12 +74,12 @@ function taskList(){
         $.ajax("http://127.0.0.1:8000/api/task/").done(function(results){
             var tasks = results.results
             for(var i = 0; i < tasks.length; i++){
-                $orderedlist.html($orderedlist.html()+ tasks[i]['id'] + ": "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + ": "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['id'] + " "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + " "),
                 $orderedlist.html($orderedlist.html()+ tasks[i]['status'] + "  "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + ": "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + "<br>"),
-                $("#task1").append($orderedlist);
+                $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + " "),
+                $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + "<br>"),
+                $("#task1list").append($orderedlist);
             }
         })
 }
@@ -110,10 +120,20 @@ function taskList(){
 //      }
 //  });
 //
-
+function delOne(){
+    var dropdown = $("#getID")
+    jQuery.ajax('http://127.0.0.1:8000/api/task/').done(function(results){
+        var task = results.results
+        dropdown.html("")
+        for (var i = 0; i < task.length; ++i){
+            dropdown.append('<option>' + task[i]['id'] + '</option>')
+        }    }) }
 
 // $("#postButton").click(taskPost)
-$("#add").click(taskPost)
+// taskList()
+delOne()
+$("#taskDelete").click(taskDelete)
+// $("#add").click(taskPost)
 $("#getButton").click(taskList)
 $("#try_delete").click(taskDelete)
 // $("#try_post").click(taskPost)

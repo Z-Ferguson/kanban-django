@@ -18,31 +18,79 @@
             <h6>Add Task</h6>
         <form>
                new task: <input type="text" id="addTask" name="title"><br>
-           </form>
-           <button id="add">add </button>
-           <form>
+            </form>
+            <form>
                    <select id="priority">
                    <option>Priority</option>
                    <option value='H'>High</option>
                    <option value='M'>Medium</option>
                    <option value='L'>Low</option>
                    </select>
-           </form>
-           <form>
+            </form>
+            <form>
                    <select id="status">
                    <option>Status</option>
                    <option value='N'>new</option>
                    <option value='P'>in progress</option>
                    <option value='C'>done</option>
                    </select>
-           </form>
-           <form>
+            </form>
+            <form>
                 description: <input type="text" id="addDesc" name="description"><br>
+            <button id="add">add </button>
             </form>
 </div>
 </div>
 </div>
 </div>
+<!-- <form>
+<select id = "getID">
+       <option>Task ID</option>
+       <option></option>
+</select>
+<button class = 'btn btn-primary' id="taskDelete">Delete </button>
+</form> -->
+<div class="modal fade edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="form-group">
+            <h6>Edit Task</h6>
+        <form>
+        <select id = "getID">
+               <option>Task ID</option>
+               <option></option>
+        </select>
+        <button class = 'btn btn-primary' id="taskDelete">Delete </button>
+        </form>
+            Edit Title: <input type="text" id="title" name="New Title"><br>
+            <form>
+                   <select id="priority">
+                   <option>Priority</option>
+                   <option value='H'>High</option>
+                   <option value='M'>Medium</option>
+                   <option value='L'>Low</option>
+                   </select>
+            </form>
+            <form>
+                   <select id="status">
+                   <option>Status</option>
+                   <option value='N'>new</option>
+                   <option value='P'>in progress</option>
+                   <option value='C'>done</option>
+                   </select>
+            </form>
+            <form>
+                description: <input type="text" id="addDesc" name="description"><br>
+            <button id="try_patch">Edit</button>
+            </form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
     <div class="row">
     <div class="col-sm-1">
     </div>
@@ -55,8 +103,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">EDIT TASK<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
-                            <li><button class = 'btn btn-primary' id="try_review">Review </button></li>
-                            <li><button class = 'btn btn-primary' id="try_patch">Edit Task</button></li>
+                            <li><button type="button" class='btn btn-primary' data-toggle="modal" data-target=".edit-modal" id="try_review">Edit Task</button></li>
                             <li><button class = 'btn btn-primary' id="try_delete">Delete Tasks</button></li>
 
                         </ul>
@@ -65,9 +112,7 @@
               </div>
               <div id='task1' class="container">
                 <ol id="task1list">
-                <li>HERE IS WHERE TASKS GO</li>
-                <li>THIS IS ANOTHER TASK</li>
-                <li>THIS IS THE THIRD TASK</li>
+                <tr><b>ID | Title | Status | Priority</tr>
                 </ol>
               </div>
             </div>
@@ -89,7 +134,8 @@
    </ul>
               </div>
               <div id='task2' class="container">
-
+                  <ol id="task2list">
+                  </ol>
               </div>
             </div>
         </div>
@@ -110,7 +156,9 @@
        </li>
    </ul>
               </div>
-              <div id='task1' class="container">
+              <div id='task3' class="container">
+                  <ol id="task3list">
+                  </ol>
               </div>
             </div>
         </div>
