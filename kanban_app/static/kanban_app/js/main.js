@@ -47,22 +47,23 @@ function taskPost(){
 function taskDelete(getID){
    var j = document.getElementById("getID").value
    console.log('EXTERMINATE')
- jQuery.ajax({url:'http://127.0.0.1:8000/api/task/' + j + '/', type:'DELETE'
-   }).done(function(){})
+ jQuery.ajax({
+     url:'http://127.0.0.1:8000/api/task/' + j + '/', type:'DELETE'
+     }).done(function(){})
 }
 
 // PATCH //
-function taskPatch(getID){
+function taskPatch(){
     var j = document.getElementById("getID").value
     console.log(j)
-    // var title = document.getElementByID("title").value
-    var priority = document.getElementById("priority").value
+    var title = document.getElementById("title").value
+    var priority = document.getElementById("priority1").value
     console.log(priority)
-    var status = document.getElementById("status").value
+    var status = document.getElementById("status1").value
     console.log(status)
-    var description = document.getElementById("addDesc").value
+    var description = document.getElementById("addDesc1").value
     console.log(description)
-    var patchData = {'title': title, 'priority': priority, 'status': status, 'description': description}
+    var patchData = {'title': title, 'status': status, 'priority': priority, 'description': description}
     jQuery.ajax({url:'http://127.0.0.1:8000/api/task/' +  j + '/', data:patchData, dataType: 'jsonp', type:'PATCH'
 }).done(function(results){})
 }
