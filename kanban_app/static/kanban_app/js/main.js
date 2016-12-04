@@ -72,6 +72,7 @@ function taskDelete(){
     }).done(function(){})
 }
 
+
 // PATCH //
 function taskPatch(url){
     console.log("PAAAATCHING")
@@ -79,6 +80,7 @@ function taskPatch(url){
     jQuery.ajax({url:'http://127.0.0.1:8000/api/task/7/', data:patchdata, type: 'PATCH'
 }).done(function(results){})
 }
+
 
 
 //GET//
@@ -101,6 +103,7 @@ function taskList(){
 
 
 
+<<<<<<< HEAD
 $("#registerSubmit").serialize() // returns all the data in your form
 $.ajax({
      type: "POST",
@@ -147,11 +150,28 @@ $.ajax({
 //  });
 //
 // ;
+=======
+function addTask(){
+    var title = document.getElementById("new_task").value
+    var priority = document.getElementById("priority").value
+    console.log("here")
+    console.log(title)
+    var postdata = {'title': title, 'status': 'N', 'priority': priority}
+    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, type:'POST'
+}).done(function(results){}
+>>>>>>> 7fcb985a187fb9ec6565581eef274d42aed454e2
 
 // $("#postButton").click(taskPost)
 $("#getButton").click(taskList)
 $("#try_delete").click(taskDelete)
+<<<<<<< HEAD
 // $("#submit_new_task").click(addTask)
+=======
+
+
+$("#submit_new_task").click(addTask)
+
+>>>>>>> 7fcb985a187fb9ec6565581eef274d42aed454e2
 // $("#deletebutton").click(removeTask)
 $("#try_post").click(taskPost)
 $("#try_patch").click(taskPatch)
