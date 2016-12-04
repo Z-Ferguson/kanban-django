@@ -71,7 +71,7 @@ function taskPatch(){
 //GET//
 function taskList(){
     console.log("getting stuff")
-    var $orderedlist = $("<ol>")
+    var $orderedlist = $("<tr>")
         $.ajax("http://127.0.0.1:8000/api/task/").done(function(results){
             var tasks = results.results
             for(var i = 0; i < tasks.length; i++){
@@ -85,42 +85,6 @@ function taskList(){
         })
 }
 
-
-
-// var $tasks = $('#tasks')
-// var $api = '/api/';
-// var $userID = $('input[name="user"]').val()
-// var $new_task = $('#new_task_form');
-//
-// $new_task.title = $new_task.find('input[name="title"]');
-// $new_task.status = $new_task.find('input[name="status"]');
-// $new_task.priority = $new_task.find('input[name="priority"]');
-// $new_task.description = $new_task.find('textarea[name="description"]');
-//
-//
-// $new_task.submit(function() {
-//     console.log('things are happening');
-//
-//     var $new_task_data = {
-//         title: $new_task.title.val(),
-//         status: $new_task.status.val(),
-//         priority: $new_task.priority.val(),
-//         description: $new_task.description.val(),
-//     };
-// })
-//
-// $.ajax({
-//      url: $api + 'tasks/',
-//      method: "POST",
-//      data: $new_task_data,
-//      success: function(response) {
-//          appendTask(response);
-//          buttonInit();
-//          console.log('i think it worked!');
-//          $new_task[0].reset();
-//      }
-//  });
-//
 function delOne(){
     var dropdown = $("#getID")
     jQuery.ajax('http://127.0.0.1:8000/api/task/').done(function(results){
@@ -130,7 +94,6 @@ function delOne(){
             dropdown.append('<option>' + task[i]['id'] + '</option>')
         }    }) }
 
-// $("#postButton").click(taskPost)
 taskList()
 delOne()
 $("#taskDelete").click(taskDelete)
