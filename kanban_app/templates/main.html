@@ -20,19 +20,27 @@
                 New Task: <input type="text" id="addTask" name="title"><br><br>
                    <select id="priority">
                    <option>Priority</option>
-                   <option value='H'>High</option>
-                   <option value='M'>Medium</option>
-                   <option value='L'>Low</option>
+                   <option value='High'>High</option>
+                   <option value='Medium'>Medium</option>
+                   <option value='Low'>Low</option>
                    </select><br><br>
 
                    <select id="status">
                    <option>Status</option>
-                   <option value='N'>New</option>
-                   <option value='P'>In Progress</option>
-                   <option value='C'>Done</option>
+                   <option value='New'>New</option>
+                   <option value='In Progress'>In Progress</option>
+                   <option value='Done'>Done</option>
                    </select><br><br>
+
+                   <select id="assignment">
+                   <option>Assignment</option>
+                   <option value='1'>John D. Bower</option>
+                   <option value='2'>Tracy SanFilipo</option>
+                   <option value='3'>Zach Ferguson</option>
+                   </select><br><br>
+
                 Description: <input type="text" id="addDesc" name="description"><br><br>
-            <button class = 'btn btn-primary' id="add">add </button>
+            <button class = 'btn btn-primary' id="add">Add Task</button>
             </form>
 </div>
 </div>
@@ -59,17 +67,26 @@
             Edit Title: <input type="text" id="title" name="New Title"><br><br>
                    <select id="priority1">
                    <option>Priority</option>
-                   <option value='H'>High</option>
-                   <option value='M'>Medium</option>
-                   <option value='L'>Low</option>
+                   <option value='High'>High</option>
+                   <option value='Medium'>Medium</option>
+                   <option value='Low'>Low</option>
                    </select>
+
                    <br><br>
                    <select id="status1">
                    <option>Status</option>
-                   <option value='N'>new</option>
-                   <option value='P'>in progress</option>
-                   <option value='C'>done</option>
+                   <option value='New'>New</option>
+                   <option value='In Progress'>In Progress</option>
+                   <option value='Done'>Done</option>
                </select><br><br>
+
+                   <select id="assignment1">
+                   <option>Assignment</option>
+                   <option value='1'>John D. Bower</option>
+                   <option value='2'>Tracy SanFilipo</option>
+                   <option value='3'>Zach Ferguson</option>
+                   </select><br><br>
+
             Description: <input type="text" id="addDesc1" name="New Description"><br><br>
             <button class='btn btn-primary' id="try_patch">Edit</button>
             <button class = 'btn btn-primary' id="taskDelete">Delete </button><br>
@@ -79,55 +96,49 @@
 </div>
 </div>
     <div class="row">
-    <div class="col-sm-1">
     </div>
-        <div class="col-sm-3">
+        <div class="col-md-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h6 class="panel-title">JOHN D. BOWER</h6>
                 <ul class="fortask">
                     <ul class="fortask">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Options<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                             <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
                             <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".edit-modal">Edit/Delete Task</button>
            </li>
        </ul>
               </div>
-              <div id='task1' class="container">
-                <ol id="task1list">
-                <tr><b>ID | Title | Status | Priority</tr>
-                </ol>
+              <div class="panel-body" id="task1">
               </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h6 class="panel-title">TRACY</h6>
+                <h6 class="panel-title">TRACY SANFILIPO</h6>
                 <ul class="fortask">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Options<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                         <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
                         <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".edit-modal">Edit/Delete Task</button>
        </li>
    </ul>
               </div>
-              <div id='task2' class="container">
-                  <ol id="task2list">
-                  </ol>
+              <div class="panel-body" id="task2">
               </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-4">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h6 class="panel-title">ZACH FERGUSON</h6>
                 <ul class="fortask">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Edit Task <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Options<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                         <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Create New Task</button>
                         <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".edit-modal">Edit/Delete Task</button>
@@ -135,11 +146,8 @@
    </ul>
                         </ul>
             </div>
-                <div id='task3' class="container">
-                    <ol id="task3list">
-                        <li
-                    </ol>
-                </div>
+            <div class="panel-body" id="task3">
+            </div>
             </div>
         </div>
     </div>

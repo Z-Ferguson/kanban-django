@@ -35,9 +35,10 @@ function taskPost(){
     var priority = document.getElementById("priority").value
     var status = document.getElementById("status").value
     var description = document.getElementById("addDesc").value
-    console.log('you added something new')
-  var postdata = {'title': title, 'status': status, 'priority': priority, 'description': description}
-  jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, datatype: 'jsonp', type:'POST'
+    var assignment = document.getElementById("assignment").value
+    var postdata = {'title': title, 'status': status, 'priority': priority,
+                  'assignment': assignment, 'description': description}
+    jQuery.ajax({url:'http://127.0.0.1:8000/api/task/', data:postdata, datatype: 'jsonp', type:'POST'
     }).done(function(results){
     location.reload();
     })
@@ -46,7 +47,6 @@ function taskPost(){
 // DELETE //
 function taskDelete(getID){
    var j = document.getElementById("getID").value
-   console.log('EXTERMINATE')
  jQuery.ajax({
      url:'http://127.0.0.1:8000/api/task/' + j + '/', type:'DELETE'
      }).done(function(){})
@@ -55,35 +55,51 @@ function taskDelete(getID){
 // PATCH //
 function taskPatch(){
     var j = document.getElementById("getID").value
-    console.log(j)
     var title = document.getElementById("title").value
     var priority = document.getElementById("priority1").value
-    console.log(priority)
     var status = document.getElementById("status1").value
-    console.log(status)
     var description = document.getElementById("addDesc1").value
-    console.log(description)
-    var patchData = {'title': title, 'status': status, 'priority': priority, 'description': description}
+    var assignment = document.getElementById("assignment1").value
+    var patchData = {'title': title, 'status': status, 'priority': priority,
+                    'description': description, 'assignment': assignment}
     jQuery.ajax({url:'http://127.0.0.1:8000/api/task/' +  j + '/', data:patchData, dataType: 'jsonp', type:'PATCH'
 }).done(function(results){})
 }
 
 //GET//
 function taskList(){
-    console.log("getting stuff")
     var $orderedlist = $("<tr>")
         $.ajax("http://127.0.0.1:8000/api/task/").done(function(results){
-            var tasks = results.results
-            for(var i = 0; i < tasks.length; i++){
-                $orderedlist.html($orderedlist.html()+ tasks[i]['id'] + " "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['title'] + " "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['status'] + "  "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['priority'] + " "),
-                $orderedlist.html($orderedlist.html()+ tasks[i]['description'] + "<br>"),
-                $("#task1list").append($orderedlist);
-            }
-        })
-}
+            for(var i = 0; i < results.results.length; i++){
+                if (results.results[i]['assignment']==='1'){
+                var id = '<div id="task1listheader">' + '<b>' + results.results[i]['id'] + ". ";
+                var title =  results.results[i]['title'] + '</b>' + '</div>';
+                var status ='<div id="task1listbody" style="padding-left:25px;">' + "Status: " + results.results[i]['status'] + '<br>';
+                var priority = "Priority: " + results.results[i]['priority'] + '<br>';
+                var assignment = results.results[i]['assignment'] + '<br>';
+                var description = "Description:" + "<p style=padding-left:25px;font-size:90%;>" + results.results[i]['description'] + '</p>' + '</div>' + "<br>";
+                taskdata = id + title + status + priority + description;
+                // $("#task1listheader").append(id + title)
+                $("#task1").append(taskdata)
+                } else if (results.results[i]['assignment']==='2'){
+                var id = '<div id="task2listheader">' + '<b>' + results.results[i]['id'] + ". ";
+                var title =  results.results[i]['title'] + '</b>' + '</div>';
+                var status ='<div id="task2listbody" style="padding-left:25px;">' + "Status: " + results.results[i]['status'] + '<br>';
+                var priority = "Priority: " + results.results[i]['priority'] + '<br>';
+                var assignment = results.results[i]['assignment'] + '<br>';
+                var description = "Description:" + "<p style=padding-left:25px;font-size:90%;>" + results.results[i]['description'] + '</p>' + '</div>' + "<br>";
+                taskdata = id + title + status + priority + description;
+                $("#task2").append(taskdata)
+                } else {
+                var id = '<div id="task3listheader">' + '<b>' + results.results[i]['id'] + ". ";
+                var title =  results.results[i]['title'] + '</b>' + '</div>';
+                var status ='<div id="task3listbody" style="padding-left:25px;">' + "Status: " + results.results[i]['status'] + '<br>';
+                var priority = "Priority: " + results.results[i]['priority'] + '<br>';
+                var assignment = results.results[i]['assignment'] + '<br>';
+                var description = "Description:" + "<p style=padding-left:25px;font-size:90%;>" + results.results[i]['description'] + '</p>' + '</div>' + "<br>";
+                taskdata = id + title + status + priority + description;
+                $("#task3").append(taskdata)
+                }}})}
 
 function delOne(){
     var dropdown = $("#getID")
