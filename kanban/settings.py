@@ -26,7 +26,7 @@ LOGIN_REDIRECT_URL = '/kanban_app/main/'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'rocky-garden-18185.herokuapp.com']
 
 
 # Application definition
